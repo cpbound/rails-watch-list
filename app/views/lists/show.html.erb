@@ -1,22 +1,24 @@
 <div class="container">
-<h1><%= @list.name %></h1>
-</div>
-<div class="container">
-<p><% @list.movies.each do |movie| %></p>
-  <%= movie.poster_url %>
-  <%= movie.title %>
-  <%= movie.overview %>
-  <%= movie.rating %>
-<% end %>
-</div>
-
-<div>
-<%= link_to "Add some crap bruv", new_list_bookmark_path(@list.id) %>
-<%= link_to "Delete dis boi", bookmark_path, method: :delete, data: {confirm: "Remove dis list?"} %>
+  <h1><%= @list.name %></h1>
+  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 </div>
 
 <div class="container">
-<p><% @list.bookmarks.each do |movie| %></p>
-  <%= movie.comment %>
-<% end %>
+  <p><% @list.movies.each do |movie| %></p>
+    <%= movie.poster_url %>
+    <%= movie.title %>
+    <%= movie.overview %>
+    <%= movie.rating %>
+  <% end %>
+</div>
+
+<div class=container>
+  <%= link_to "Add some crap bruv", new_list_bookmark_path(@list.id) %>
+  <%= link_to "Delete dis boi", bookmark_path, method: :delete, data: {confirm: "Remove dis list?"} %>
+</div>
+
+<div class="container">
+  <p><% @list.bookmarks.each do |movie| %></p>
+    <%= movie.comment %>
+  <% end %>
 </div>
