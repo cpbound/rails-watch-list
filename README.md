@@ -1,24 +1,49 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Movie Watch List
 
-Things you may want to cover:
+Make a list, add movies to it, that sort of thing. Cobbled together in an afternoon, in the process of being tidied up now.
+## Built With
 
-* Ruby version
+- [PostgreSQL](https://www.postgresql.org/)
+- [Rails 6](https://guides.rubyonrails.org/)
+- [Heroku](https://heroku.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
-* System dependencies
+## Setup
 
-* Configuration
+Install gems JS packages and dependencies
+```
+bundle install
+yarn install
+```
 
-* Database creation
+### ENV Variables
+Cloudinary is used for uploading weird pictures for your lists if that's your sort of thing. You'll need an account at [Cloudinary](https://cloudinary.com/) for this part.
 
-* Database initialization
+Create an .env to store your environment variables
+```
+touch .env
+```
+Set these variables for image upload.
+```
+CLOUDINARY_URL=your_cloudinary_key
+```
+### Database Setup
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* How to run the test suite
+### Start a Server
+```
+rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+That's it. Enjoy!
+## Acknowledgements
 
-* Deployment instructions
+ - Built in a terrified panic over 2 days at [Le Wagon](https://www.lewagon.com/tokyo) Tokyo coding bootcamp.
+## Authors
 
-* ...
+- [Chris Bound](https://www.github.com/cpbound)
