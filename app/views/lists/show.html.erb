@@ -4,30 +4,25 @@
     <%= link_to "Add some crap bruv", new_list_bookmark_path(@list.id) %>
   </div>
 </div>
-
-
 <div class="card" style="width: 18rem;">
   <p><% @list.movies.each do |movie| %></p>
-  <img class="card-img-top" url=<%= image_tag movie.poster_url %>
-
-  <div class="card-body">
-    <h5 class="card-title"><%= movie.title %></h5>
-    <p class="card-text"><%= movie.overview %></p>
+    <img class="card-img-top" url=<%= image_tag movie.poster_url %>>
+    <div class="card-body">
+      <h5 class="card-title"><%= movie.title %></h5>
+      <p class="card-text"><%= movie.overview %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= movie.rating %></li>
+      <li class="list-group-item">Thats a rating up there.</li>
+      <li class="list-group-item">Not just a random number...</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= movie.rating %></li>
-    <li class="list-group-item">Thats a rating up there.</li>
-    <li class="list-group-item">Not just a random number...</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+<% end %>
 </div>
-
-  <% end %>
-</div>
-
 <div class=container>
   <%= link_to "Delete dis boi", bookmark_path, method: :delete, data: {confirm: "Remove dis list?"} %>
 </div>
