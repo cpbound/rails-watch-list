@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : "movies.jpg" %>')"">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path("movies.jpg") %>')">
   <div class="container">
     <h1><%= @list.name %></h1>
     <div class="btn btn-flat">
@@ -9,16 +9,15 @@
 </div>
 <% @list.movies.each do |movie| %>
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" url=<%= image_tag movie.poster_url %>
-    <div class="card-body"></div>
-  <h5 class="card-title"><%= movie.title %></h5>
-  <p class="card-text"><%= movie.overview %></p>
-</div>
-<ul class="list-group list-group-flush">
-  <li class="list-group-item"><%= movie.rating %></li>
-  <li class="list-group-item">Thats a rating up there.</li>
-  <li class="list-group-item">Not just a random number...</li>
-</ul>
+    <%= image_tag(movie.poster_url) %>
+    <h5 class="card-title"><%= movie.title %></h5>
+    <p class="card-text"><%= movie.overview %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= movie.rating %></li>
+    <li class="list-group-item">Thats a rating up there.</li>
+    <li class="list-group-item">Not just a random number...</li>
+  </ul>
 </div>
 <% end %>
 </div>
