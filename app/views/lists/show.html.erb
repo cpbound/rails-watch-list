@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : cl_image_path("movies_ciljth") %>')"">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : "movies.jpg" %>')"">
   <div class="container">
     <h1><%= @list.name %></h1>
     <div class="btn btn-flat">

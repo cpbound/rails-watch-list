@@ -13,7 +13,7 @@
   <div class="container mt-3 mb-5">
     <div class="cards">
       <% @lists.each do |list|  %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.attached? ? cl_image_path(list.photo.key) : cl_image_path("movies_ciljth") %>')">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path("movies.jpg") %>')">
           <%= link_to list.name, list_path(list)   %>
         </div>
       <% end %>
